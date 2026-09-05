@@ -1,0 +1,8 @@
+pandas>=2.2
+numpy>=1.26
+scikit-learn>=1.4
+tqdm>=4.66
+datasets>=3.0
+huggingface_hub>=0.24
+soundfile>=0.12
+librosa>=0.10

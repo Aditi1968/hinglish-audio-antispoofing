@@ -1,0 +1,110 @@
+# ---------------------------------------------------------------------------
+# Audio and archives — NEVER commit. No audio from this project is
+# redistributable (see DATA_LICENSES.md). The dataset stays local.
+# ---------------------------------------------------------------------------
+*.wav
+*.mp3
+*.flac
+*.m4a
+*.mp4
+*.ogg
+*.opus
+*.aac
+*.wma
+*.tar.gz
+*.tar
+*.tgz
+*.zip
+*.7z
+*.rar
+*.parquet
+*.arrow
+
+# ---------------------------------------------------------------------------
+# The frozen dataset tree — local only, in full.
+# ---------------------------------------------------------------------------
+data/
+
+# ---------------------------------------------------------------------------
+# Manifests: everything local EXCEPT the redacted public subset.
+# The full manifests carry transcripts, speaker identifiers and gender.
+# See README "Metadata: public vs local" and scripts/make_public_manifests.py.
+# ---------------------------------------------------------------------------
+/metadata/*
+!/metadata/public/
+
+# Never publish the group-id hashing salt — it would make the hashed
+# group_id column reversible.
+/metadata/public/.group_salt
+.group_salt
+
+# ---------------------------------------------------------------------------
+# Run logs — contain absolute local paths and machine details.
+# ---------------------------------------------------------------------------
+*.log
+
+# ---------------------------------------------------------------------------
+# Environments and local config
+# ---------------------------------------------------------------------------
+.venv/
+venv/
+env/
+ENV/
+.env
+.env.*
+!.env.example
+*.local
+*.local.*
+config.local.*
+settings.local.json
+.direnv/
+
+# ---------------------------------------------------------------------------
+# Python
+# ---------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+htmlcov/
+.coverage
+.coverage.*
+.tox/
+
+# ---------------------------------------------------------------------------
+# Model artifacts — this project releases no weights (see README "Ethics").
+# ---------------------------------------------------------------------------
+*.ckpt
+*.pt
+*.pth
+*.onnx
+*.safetensors
+*.h5
+*.pkl
+*.joblib
+checkpoints/
+runs/
+wandb/
+lightning_logs/
+outputs/
+
+# ---------------------------------------------------------------------------
+# Editors / OS
+# ---------------------------------------------------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
